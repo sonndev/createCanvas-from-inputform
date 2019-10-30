@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>H·A·R Kvalitets køkkener</title>
+    <meta charset='utf-8'/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap"   rel="stylesheet">
+    <script src='main.js'></script>
+</head>
+    
+<body>
+
+    <button onclick="topFunction()" id="top" title="Go to top">∧</button>
+
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("top");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+
+  <div class="header">
+    <div class="logo">
+      <h1><a href="index.html">H·A·R</a></h1>
+    </div>
+
+      <ul class="nav">
+          <li><a href="#seKøkken">Se køkkener</a></li>
+          <li><a href="#om">Om os</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a id="bygKøkken" href="canvas.html">Design dit køkken</a></li>
+      </ul>
+  </div>
+
+  <div class="content">
+    <h3>Byg dit køkken</h3>
+    <div id="canvas">
+      <div id="myCanvas1"></div>
+        <canvas id="myCanvas2" width="300" height="400" 
+                style="outline: 1px solid #333;">
+      </canvas>
+    </div>
+  </div>
+
+  
+  <div id="canvasSize">
+    <form id="dimensions">
+      <input  id="width" type="number" placeholder="Bredde i cm"></input>
+      <input id="height" type="number" placeholder="Højde i cm"></input>
+    </form> 
+      <input type="button" id="create" value="Byg rum" onclick="createRoom()"></input>
+      <input type="button" id="remove" value="Reset køkken" onclick="reset()"></input>
+      
+      <button id="price" onclick="">Se samlet pris</button>
+  </div>
+
+  <footer>
+      <h3>&copy; H·A·R</h3>
+  </footer>
+
+</body>
+    
+</html>
